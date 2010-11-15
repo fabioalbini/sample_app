@@ -54,3 +54,26 @@ text-align: center; margin-top: 10px; width: 710px; margin-left: auto; margin-ri
 }
 footer nav { float: none;
 }
+
+
+table.profile {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+td.main {
+	width: 70%;
+	passing: 1em;
+}
+
+td.sidebar {
+	width: 30%;
+	padding: 1em;
+	vertical-align:top;
+	background: #ffc;
+}
+
+.profile img.gravatar {
+	border: 1px solid #999;
+	margin-bottom: -15px;
+}

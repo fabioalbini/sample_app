@@ -33,7 +33,13 @@ describe UsersController do
       get :show, :id => @user.id
       response.should have_selector('h1>img', :class => 'gravatar')
     end
-  end
+    
+    it 'deve possuir a url correta' do
+      get :show, :id => @user.id
+      response.should have_selector('td>a', :content => user_path(@user.id),
+                                          :href => user_path(@user.id))
+    end
+end
 
   describe "GET 'new'" do
     it "should be successful" do
