@@ -13,6 +13,26 @@ describe UsersController do
       get :show, :id => @user.id
       response.should be_success
     end
+    
+    it 'deve encontrar o usuario correto' do
+      get :show, :id => @user.id
+      assigns(:user).should == @user
+    end
+    
+    it 'deve possuir o titulo correto' do
+      get :show, :id => @user.id
+      response.should have_selector('title', :content => @user.name)
+    end
+    
+    it 'deve possuir o nome do usuario' do
+      get :show, :id => @user.id
+      response.should have_selector('h1', :content => @user.name)
+    end
+    
+    it 'deve possuir uma imagem para o perfil' do
+      get :show, :id => @user.id
+      response.should have_selector('h1>img', :class => 'gravatar')
+    end
   end
 
   describe "GET 'new'" do
